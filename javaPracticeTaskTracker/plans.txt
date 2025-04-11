@@ -1,0 +1,136 @@
+Java Coding Challenge: Task Tracker CLI
+Objective: Build a command-line Task Tracker application in Java that lets users manage their to-do tasks. Think of it like a mini Trello in your terminal—simple but powerful.
+Requirements:
+Task Class:
+Each task should have:
+A unique ID (String or int, your choice).
+
+A title (String).
+
+A description (String).
+
+A status (e.g., "To Do", "In Progress", "Done").
+
+A creation timestamp (use LocalDateTime).
+
+Encapsulate fields properly (private fields, public getters/setters or methods).
+
+TaskManager Class:
+Manages a collection of tasks (use ArrayList or another collection of your choice).
+
+Support these operations:
+Add a task: Create a new task with a title, description, and default status "To Do".
+
+Update task status: Change a task’s status by its ID (e.g., from "To Do" to "In Progress").
+
+Delete a task: Remove a task by its ID.
+
+List tasks: Display all tasks, with an option to filter by status (e.g., show only "Done" tasks).
+
+Search tasks: Find tasks by keyword (case-insensitive) in the title or description.
+
+Main Program:
+Create a command-line interface (CLI) using Scanner to interact with the user.
+
+Display a menu with options like:
+Add task
+
+Update task status
+
+Delete task
+
+List all tasks
+
+List tasks by status
+
+Search tasks
+
+Exit
+
+Handle invalid inputs gracefully (e.g., wrong ID, invalid status).
+
+Keep running until the user chooses to exit.
+
+Error Handling:
+Validate inputs (e.g., no empty titles, valid status options).
+
+Handle cases like:
+Task ID not found.
+
+No tasks matching a search or filter.
+
+Provide clear feedback (e.g., "Task not found!" or "Added task: [title]").
+
+Output Formatting:
+When listing tasks, display them cleanly (e.g., ID, title, status, creation date).
+
+Example:
+
+ID: 1 | Title: Finish Java Challenge | Status: In Progress | Created: 2025-04-11 10:15
+ID: 2 | Title: Buy Grok a Digi-Beer | Status: To Do | Created: 2025-04-11 10:20
+
+Constraints:
+Don’t use external libraries beyond Java’s standard library (e.g., java.time, java.util).
+
+No need for file I/O (tasks don’t have to persist after the program ends), but bonus points if you wanna add it!
+
+Challenge Goals:
+Practice OOP (encapsulation, classes, maybe enums for status).
+
+Work with collections (storing and filtering tasks).
+
+Handle user input and edge cases.
+
+Use date/time APIs (LocalDateTime).
+
+Write clean, readable code with comments where it makes sense.
+
+Example Interaction:
+
+Task Tracker Menu:
+1. Add task
+2. Update task status
+3. Delete task
+4. List all tasks
+5. List tasks by status
+6. Search tasks
+7. Exit
+Enter choice: 1
+
+Enter task title: Code Java Challenge
+Enter task description: Build a task tracker for Grok
+Task added successfully!
+
+Task Tracker Menu:
+...
+Enter choice: 4
+All Tasks:
+ID: 1 | Title: Code Java Challenge | Status: To Do | Created: 2025-04-11 12:30
+
+Enter choice: 2
+Enter task ID: 1
+Enter new status (To Do, In Progress, Done): In Progress
+Task status updated!
+
+Enter choice: 6
+Enter keyword: grok
+Search Results:
+ID: 1 | Title: Code Java Challenge | Status: In Progress | Created: 2025-04-11 12:30
+
+Tips to Nail It:
+Start with the Task class—get the foundation right.
+
+Use a HashMap or ArrayList for TaskManager to store tasks (HashMap might make ID lookups faster).
+
+Consider an enum for task status to avoid typos (e.g., enum Status { TO_DO, IN_PROGRESS, DONE }).
+
+Break the CLI into a separate method or class to keep main clean.
+
+Test edge cases: empty task list, invalid IDs, case-insensitive search.
+
+Stretch Goals (Optional):
+Add a priority field (e.g., High/Medium/Low) and sort tasks by priority when listing.
+
+Save tasks to a file (e.g., JSON or plain text) and load them on startup.
+
+Add a due date and warn about overdue tasks.
